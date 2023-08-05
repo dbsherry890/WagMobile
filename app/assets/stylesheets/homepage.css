@@ -1,0 +1,27 @@
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  color: green;
+}
+
+#content {
+  background-color: #e3f2fd;
+  flex: 1;
+  padding: 20px;
+}
+
+.footer {
+  position: relative;
+  margin-top: 50px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
