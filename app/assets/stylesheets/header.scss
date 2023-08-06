@@ -1,5 +1,5 @@
 .navbar {
-  margin-bottom: 0;
+  margin: 0px;
   z-index: 9999;
   border: 0;
   font-size: 12px !important;
@@ -9,6 +9,7 @@
   font-family: Montserrat, sans-serif;
   justify-content: space-between;
   height: 65px;
+  margin-bottom: 0;
 }
 .navbar li a,
 .navbar .navbar-brand {
