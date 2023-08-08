@@ -15,9 +15,13 @@
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="10">
 
+<div id="videoDiv" style="width: 50%; height: 10px; position: relative;" >
+  <%= video_tag "lab_walking.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, id: "background-video" %>
+</div>
+
 <div class="jumbotron text-center">
-  <h1>SwagMobiles!</h1> 
-  <p>As crazy about dogs as you are!</p> 
+  <h1 style="font-size: 100px;">SwagMobiles</h1> 
+  <p>As crazy about dogs as you are</p> 
   <form>
     <div class="input-group"  style= "padding-left: 360px; padding-right: 360px">
       <input type="email" class="form-control" size="10" placeholder="Email Address" required;>
@@ -29,20 +33,20 @@
 </div>
 
 <!-- Container (About Section) -->
-<div id="about" class="container-fluid">
+<div id="about" class="container-fluid bg-grey">
   <div class="row">
     <div class="col-sm-8">
-      <h2>About WagMobiles</h2><br>
-      <h4>Blurb blurb blurb</h4><br>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <br><button class="btn btn-default btn-lg">Get in Touch</button>
+      <h2>Come play with us!</h2><br>
+      <h4>Southeast Austin || Pools || Shade</h4><br>
+      <p>Your pup need a pal? We got em</p>
     </div>
-    <div class="col-sm-4">
-      <%= image_tag("Dog_Head_Cocked.png", size: 300)  %>
+    <div class="col-sm-4 mt-4">
+      <%= image_tag("Dog_Head_Cocked.png", size: 275)  %>
     </div>
   </div>
 </div>
 
+<!--
 <div class="container-fluid bg-grey">
   <div class="row">
     <div class="col-sm-4">
@@ -55,30 +59,32 @@
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- Container (Services Section) -->
 <div id="services" class="container-fluid text-center">
   <h2>SERVICES</h2>
   <h4>What we offer</h4>
   <br>
-  <div class="row slideanim">
+  <div class="row">
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-off logo-small"></span>
-      <h4>POWER</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+      <h4>Hourly</h4>
+      <p>Got an errand to run? Let your dog have some fun at doggie daycare</p>
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-heart logo-small"></span>
-      <h4>LOVE</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+      <h4>Half Day</h4>
+      <p>Let your dog enjoy a few hours while you work</p>
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-lock logo-small"></span>
-      <h4>JOB DONE</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+      <h4>Full Day</h4>
+      <p>Peace of mind your loved one is well taken care of all day<br>
+(       Not available during summer months)</p>
     </div>
-  </div>
+  </div> 
+  <!--
   <br><br>
   <div class="row slideanim">
     <div class="col-sm-4">
@@ -97,10 +103,12 @@
       <p>Lorem ipsum dolor sit amet..</p>
     </div>
   </div>
-</div>
+</div> 
+-->
 
 <!-- Container (Portfolio Section) -->
 <div id="portfolio" class="container-fluid text-center bg-grey">
+  <!--
   <h2>Portfolio</h2><br>
   <h4>What we have created</h4>
   <div class="row text-center slideanim">
@@ -126,6 +134,7 @@
       </div>
     </div>
   </div><br>
+  -->
   
   <h2>What our customers say</h2>
   <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
@@ -161,7 +170,7 @@
   </div>
 </div>
 
-<!-- Container (Pricing Section) -->
+<!-- Container (Pricing Section) 
 <div id="pricing" class="container-fluid">
   <div class="text-center">
     <h2>Pricing</h2>
@@ -227,15 +236,16 @@
     </div>    
   </div>
 </div>
+-->
 
 <!-- Container (Contact Section) -->
-<div id="contact" class="container-fluid bg-grey">
+<div id="contact" class="container-fluid">
   <h2 class="text-center">CONTACT</h2>
   <div class="row">
     <div class="col-sm-5">
-      <p>Contact us and we'll get back to you within 24 hours.</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span> Chicago, US</p>
-      <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
+      <p>Feel free to call, feel free to text</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Austin, TX</p>
+      <p><span class="glyphicon glyphicon-phone"></span> (860)335-6336</p>
       <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
     </div>
     <div class="col-sm-7 slideanim">
@@ -257,7 +267,7 @@
   </div>
 </div>
 
-<!-- Image of location/map -->
+<!-- Image of location/map 
 <img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%">
 
 <footer class="container-fluid text-center">
@@ -301,8 +311,8 @@ $(document).ready(function(){
         }
     });
   });
-})
+}) 
 </script>
-
+-->
 </body>
 </html>

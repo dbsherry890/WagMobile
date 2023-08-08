@@ -2,7 +2,9 @@ body {
   font: 400 15px Lato, sans-serif;
   line-height: 1.7;
   color: #818181;
+  width: 100%;
 }
+
 h2 {
   font-size: 24px;
   text-transform: uppercase;
@@ -18,14 +20,29 @@ h4 {
   margin-bottom: 30px;
 }
 .jumbotron {
-  background-color: #0491cd;
-  color: #eff5f6;
+  background: transparent;
+  color: #fefefe;
+  font-size: 5em;
   padding: 3px 2.5px;
   font-family: Montserrat, sans-serif;
   height: 300px;
+  text-align: center;
+  margin: 100px 20px 0px 20px;
 }
+#background-video {
+  width: 100vw;
+  height: 50vh;
+  object-fit: cover;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
 .container-fluid {
-  padding: 6px 5px;
+  padding: 6px 5px 6px 50px;
 }
 .bg-grey {
   background-color: #f6f6f6;
