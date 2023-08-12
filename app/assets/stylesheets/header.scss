@@ -1,14 +1,15 @@
 .navbar {
-  margin: 0px;
+  margin: 0;
   z-index: 9999;
   border: 0;
   font-size: 12px !important;
   line-height: 1.42857143 !important;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
   border-radius: 0;
   font-family: Montserrat, sans-serif;
   justify-content: space-between;
-  height: 65px;
+  vertical-align: auto;
+  height: 45px;
   margin-bottom: 0;
 }
 .navbar li a,
@@ -18,7 +19,6 @@
 .navbar-nav li a:hover,
 .navbar-nav li.active a {
   color: #100602 !important;
-  background-color: #fff !important;
 }
 .navbar-default .navbar-toggle {
   border-color: transparent;
