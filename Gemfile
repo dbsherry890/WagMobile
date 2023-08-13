@@ -75,5 +75,7 @@ gem 'devise'
 
 gem 'faker'
 
+gem 'cloudinary'
+
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'

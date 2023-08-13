@@ -5,93 +5,138 @@
     <title>Bootstrap Theme Company Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <%# <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"> %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <%= stylesheet_link_tag("homepage") %>
 
   </head>
+  
   <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="10">
     <div class="videoContainer">
       
       <%= video_tag "lab_walking.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: 'background-video' %>
       
-      <div class="jumbotron">
+      <%# <div class="jumbotron">
         <h1 >SwagMobiles</h1> 
         <p>As crazy about dogs as you are</p> 
         <form>
           <div class="input-group">
-            <input type="email" class="form-control" size="10" placeholder="Email Address" required;>
+            <input type="email" class="form-control" size="50" placeholder="Email Address" required;>
             <div class="input-group-btn">
               <button type="button" class="btn btn-danger">Subscribe</button>
             </div>
           </div>
         </form>
+      </div> %>
+
+      <div class="container-fluid text-white rounded jumbotron">
+        <h1 class="display-1">SwagMobiles</h1> 
+        <p>As crazy about dogs as you are</p> 
+        
+        <form>
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="Email Address" required;>
+            <%# <div class="input-group-btn"> %>
+              <button type="button" class="btn btn-danger">Subscribe</button>
+            <%# </div> %>
+          </div>
+        </form>
       </div>
+
     </div>      
 
-    <!-- Container (About Section) -->
-    <div id="about" class="container-fluid bg-grey">
+    <!-- Container ('Come Play With Us' Section) -->
+    <div id="about" class="container-fluid bg-grey pt-3">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6 redborder">
           <h2>Come play with us!</h2><br>
           <h4>Southeast Austin || Pools || Shade</h4><br>
           <p>Your pup need a pal? We got em</p>
         </div>
-        <div class="col-sm-4 mt-4">
+        <%# <div class="col-sm-4 mt-4">
         
-        </div>
+        </div> %>
       </div>
     </div>
-    
-
-    <!--
-    <div class="container-fluid bg-grey">
-      <div class="row">
-        <div class="col-sm-4">
-          <span class="glyphicon glyphicon-globe logo slideanim"></span>
-        </div>
-        <div class="col-sm-8">
-          <h2>Our Values</h2><br>
-          <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
-          <p><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-      </div>
-    </div> -->
+  
 
     <!-- Container (Services Section) -->
-    <div id="services" class="container-fluid text-center">
-      <div>
-        <h2>SERVICES</h2>
-        <h4>What we offer</h4>
-        <br>
-        <div class="row justify-content-md-center">
-          <div class="col-sm-3">
-            <div>
-              <%= image_tag("Homepage/Hourly.png", height: 200, width: 250) %>
+    
+
+      <div id="services" class="d-flex flex-wrap justify-content-around w-75 m-auto p-3">
+        
+        <div class="card" style="width:300px">
+          <%= image_tag("Homepage/Hourly.png", class: "card-img-top", height: 200, width: 250) %>
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h4 class="card-title">Hourly</h4>
+              <p class="card-text">$7</p>
             </div>
-            <h4>Hourly</h4>
-            <p>Got an errand to run? Let your dog have some fun at doggie daycare</p>
+            <p class="card-text">Got an errand to run? Let your dog have some fun at doggie daycare</p>
           </div>
-          <div class="col-sm-3">
-            <div>
-              <%= image_tag("Homepage/Half_Day.png", height: 200, width: 250) %>
+        </div>
+
+        <div class="card" style="width:300px">
+          <%= image_tag("Homepage/Half_Day.png", class: "card-img-top", height: 200, width: 250) %>
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h4 class="card-title">Half Day</h4>
+              <p class="card-text">$20</p>
             </div>
-            <h4>Half Day</h4>
-            <p>Let your dog enjoy a few hours while you work</p>
+            <p class="card-text">Let your dog enjoy a few hours while you work</p>
           </div>
-          <div class="col-sm-3">
-            <div>
-              <%= image_tag("Homepage/Full_Day.png", height: 200, width: 250) %>
+        </div>
+
+        <div class="card" style="width:300px">
+          <%= image_tag("Homepage/Full_Day.png", class: "card-img-top", height: 200, width: 250) %>
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h4 class="card-title">Full Day</h4>
+              <p class="card-text">$7</p>
             </div>
-            <h4>Full Day</h4>
-            <p>Peace of mind your loved one is well taken care of all day<br>
+            <p class="card-text">Peace of mind your loved one is well taken care of all day <br>
             (Not available during summer months)</p>
           </div>
-        </div> 
+        </div>
+      </div>
+
+      <div id="services" class="d-flex flex-wrap justify-content-around w-75 m-auto p-3">
+        
+        <div class="card" style="width:300px">
+          <%= image_tag("Homepage/Waggin_Wagon.png", class: "card-img-top", height: 200, width: 250) %>
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h4 class="card-title">Pick up/Drop Off Services</h4>
+              <p class="card-text">$0</p>
+            </div>
+            <p class="card-text">Free Service Available for Full Day Campers <br>
+            (*Summer Campers Welcome Too)</p>
+          </div>
+        </div>
+
+        <div class="card" style="width:300px">
+          <%= image_tag("Homepage/Group_Training.png", class: "card-img-top", height: 200, width: 250) %>
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h4 class="card-title">Group Training (Saturdays)</h4>
+              <p class="card-text">N/A</p>
+            </div>
+            <p class="card-text">Classes coming July 22nd. Inquire for more details</p>
+          </div>
+        </div>
+
+        <div class="card" style="width:300px">
+          <%= image_tag("Homepage/Wash_That_Fur.png", class: "card-img-top", height: 200, width: 250) %>
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h4 class="card-title">Dog Baths</h4>
+              <p class="card-text">N/A</p>
+            </div>
+            <p class="card-text">Drop off your dog for daycare & bath or request a home visit. Reservations required.<br>
+              Visit <a href="www.washthatfur.com" >www.washthatfur.com</a> for more details</p>
+          </div>
+        </div>
       </div>
       <!--
       <br><br>

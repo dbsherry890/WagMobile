@@ -5,15 +5,19 @@
   /* border: 1px solid red; */
 }
 
+.redborder {
+  border: 1px solid red;
+}
+
 body {
   font: 400 15px Lato, sans-serif;
   line-height: 1.7;
   color: #818181;
-  width: 90%;
+  width: 100%;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 28px;
   text-transform: uppercase;
   color: #303030;
   font-weight: 600;
@@ -35,12 +39,43 @@ h4 {
   background: transparent;
   position: absolute;
   color: #fefefe;
-  font-size: 5em;
   font-family: Montserrat, sans-serif;
   text-align: center;
   z-index: 1;
   height: 100%;
-  border: 1px solid red;
+  padding-top: 100px;
+}
+
+.jumbotron p {
+  font-size: 2.5em;
+  margin-bottom: 0;
+}
+
+.jumbotron h1 {
+  margin-bottom: 0.25rem;
+}
+
+.flex-container {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+#bottom {
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+}
+
+input-group-btn {
+  height: 100%;
+  position: relative;
+}
+
+.input-group {
+  width: 40%;
+  margin: 0 auto;
 }
 
 .background-video {
@@ -54,9 +89,8 @@ h4 {
   bottom: 0;
 }
 
-.container-fluid {
-  padding: 6px 5px 6px 50px;
-}
+// .container-fluid {
+// }
 .bg-grey {
   background-color: #f6f6f6;
 }

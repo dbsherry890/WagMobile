@@ -91,3 +91,10 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
+
+# Cloudinary
+config.imagekit={
+  private_key: "private_nKR9FVHFZS******************",
+  public_key: "public_O69YFWOQXghl4irxPEn6HbAM1Mg=",
+  url_endpoint: "https://ik.imagekit.io/dzpqpznzv"
+}
