@@ -94,7 +94,7 @@ end
 
 # Cloudinary
 config.imagekit={
-  private_key: "private_nKR9FVHFZS******************",
+  private_key: "private_nKR9FVHFZSVwABEuoT780gY7fJ8=",
   public_key: "public_O69YFWOQXghl4irxPEn6HbAM1Mg=",
   url_endpoint: "https://ik.imagekit.io/dzpqpznzv"
 }
