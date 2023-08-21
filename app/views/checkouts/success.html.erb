@@ -1,1 +1,19 @@
-<h1>Success!</h1>
+<div class="container">
+    <h1>Success!</h1>
+    <p>You just bought my stuff!</p>
+    <section>
+    <p>
+      We appreciate your business! If you have any questions, please email
+      <a href="mailto:orders@example.com">orders@example.com</a>.
+    </p>
+  </section>
+    <h2>Your total was $<%= @session.amount_total.to_f / 100 %></h2>
+    <br />
+    <% @line_items.each do |item| %>
+        <h3><%= item.description %></h3>
+        <br>
+        <p>$<%= item.price.unit_amount.to_f / 100 %></p>
+        <% product = Stripe::Product.retrieve(item.price.product) %>
+        <%= image_tag(product.images.first, width: 300) %>
+        <% end %>
+</div>

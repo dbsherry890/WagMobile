@@ -77,7 +77,7 @@ gem 'faker'
 
 gem 'cloudinary'
 
-gem 'bootstrap', '~> 4.4.1'
+gem 'bootstrap', '~> 5.3.1'
 gem 'jquery-rails'
 gem "stripe", "~> 8.7"
 gem "pay", "~> 6.7"

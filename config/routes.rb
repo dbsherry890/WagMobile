@@ -22,4 +22,5 @@ Rails.application.routes.draw do
   get 'checkout', to: 'checkouts#show'
   get 'checkout/success', to: 'checkouts#success'
   get 'billing', to: 'billing#show'
+  get 'checkout/test', to: 'checkouts#checkout'
 end

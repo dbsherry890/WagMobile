@@ -1,27 +1,43 @@
-<nav class="navbar navbar-expand-md navbar-light bg-grey py-0 my-0" style="background-color: #e3f2fd;";>
-  <div class="container-fluid pb-0">
-    <%= link_to "Doggies", root_path, class:"navbar-brand" %>
+<nav class="navbar navbar-expand-lg navbar-light bg-grey py-0 px-1 my-0 px-3" style="background-color: #e3f2fd;";>
+  
+  <%= link_to image_tag("house-door-fill.svg"), root_path, class:"navbar-brand" %>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="dropdown">
-        <li class="nav-item">
-          <%= link_to "About", about_path, class:'nav-link active' %> 
-        </li>
-        <li class="nav-item">
-          <%= link_to "Posts", posts_path, class:'nav-link active' %> 
-        </li>
-      </ul>
-      <ul class="navbar-nav">
-        <%= render 'user/session_manager' %>
-      </ul>
-      <%# Search Bar %>
-      <%# <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form> %>
-    </div>
+  <button 
+    class="navbar-toggler" 
+    type="button" 
+    data-bs-toggle="collapse" 
+    data-bs-target="#navbarSupportedContent" 
+    aria-controls="navbarSupportedContent" 
+    aria-expanded="false" 
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ms-auto text-end">
+      <li class="nav-item active">
+        <%= link_to "About", about_path, class:'nav-link active' %> 
+      </li>
+      <%# <li class="nav-item">
+        <%= link_to "Posts", posts_path, class:'nav-link active' %> 
+      <%# </li>  %>
+      <li class="nav-item">
+        <%= link_to "Checkout", checkout_path, class:'nav-link active' %> 
+      </li>
+      <li class="nav-item">
+        <%= link_to "CheckoutTest", checkout_test_path, class:'nav-link active' %> 
+      </li>
+    </ul>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+      <%= render 'user/session_manager' %>
+    </ul>
+    <ul class="navbar-nav text-end pe-3">
+      <%= render 'user/session_manager' %>
+    </ul>
+    <%# Search Bar %>
+    <%# <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> %>
   </div>
 </nav>
