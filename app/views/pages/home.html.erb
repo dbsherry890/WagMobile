@@ -30,7 +30,7 @@
     </div>      
 
     <!-- Container ('Come Play With Us' Section) -->
-    <div id="about" class="d-flex bg-grey p-3">
+    <div id="about" class="d-flex bg-grey p-3 mb-3">
       
           <h2>Come play with us!</h2>
           <h4 class="text-center">Southeast Austin || Pools || Shade || School Bus || Misters || Obstacle Course || Training || Hourly Passes</h4><br>
@@ -40,20 +40,23 @@
 
     <!-- Container (Services Section) -->
     
-
-      <div id="services" class="d-lg-flex flex-wrap justify-content-around w-80 m-auto">
-        
-        <div class="card" style="width:300px">
-          <%= image_tag("Homepage/Hourly.png", class: "card-img-top", height: 200, width: 250) %>
-          <div class="card-body">
-            <div class="d-flex justify-content-between">
-              <h4 class="card-title">Hourly</h4>
-              <p class="card-text">$7</p>
+      <!-- First 3 Services -->
+      <div id="services" class="d-lg-flex justify-content-evenly  align-items-stretch my-3"> 
+      <!-- Hourly -->
+        <%= link_to checkout_test_path do %>
+          <div class="card" style="width:300px">
+            <%= image_tag("Homepage/Hourly.png", class: "card-img-top", height: 200, width: 250) %>
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h4 class="card-title">Hourly</h4>
+                <p class="card-text">$7</p>
+              </div>
             </div>
             <p class="card-text">Got an errand to run? Let your dog have some fun at doggie daycare</p>
           </div>
-        </div>
+        <% end %>
 
+        <!-- Half Day -->
         <div class="card" style="width:300px">
           <%= image_tag("Homepage/Half_Day.png", class: "card-img-top", height: 200, width: 250) %>
           <div class="card-body">
@@ -65,6 +68,7 @@
           </div>
         </div>
 
+        <!-- Full Day -->
         <div class="card" style="width:300px">
           <%= image_tag("Homepage/Full_Day.png", class: "card-img-top", height: 200, width: 250) %>
           <div class="card-body">
@@ -76,9 +80,10 @@
             (Not available during summer months)</p>
           </div>
         </div>
+
       </div>
 
-      <div id="services" class="d-flex flex-wrap justify-content-around w-75 m-auto p-3">
+      <div id="services" class="d-lg-flex justify-content-evenly">
         
         <div class="card" style="width:300px">
           <%= image_tag("Homepage/Waggin_Wagon.png", class: "card-img-top", height: 200, width: 250) %>

@@ -4,16 +4,17 @@
   </head>
   <body>
     <section>
-      <div class="product" style="width:300px">
+      <div class="product container m-4" style="width:300px">
         <%= image_tag("Homepage/Hourly.png", class: "card-img-top", height: 200) %>
         <div class="description">
           <h3>Drop your pup off while you do errands!</h3>
           <h5>$7.00</h5>
         </div>
+      
+        <form action="/create-checkout-session" method="POST">
+          <button type="submit" id="checkout-button">Checkout</button>
+        </form>
       </div>
-      <form action="/create-checkout-session" method="POST">
-        <button type="submit" id="checkout-button">Checkout</button>
-      </form>
     </section>
   </body>
 </html>
