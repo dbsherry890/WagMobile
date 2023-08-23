@@ -1,6 +1,27 @@
 <h1>Checkout!</h1>
 
-<%= render partial: 'pay/stripe/checkout_button', locals: {
-    session: @checkout_session,
-    title: "Checkout"
-} %>
+
+
+<html>
+  <head>
+    <title>By the Hour</title>
+  </head>
+  <body>
+    <section>
+      <div class="product container m-4" style="width:300px">
+        <%= image_tag("Homepage/Hourly.png", class: "card-img-top", height: 200) %>
+        <div class="description">
+          <h3>Drop your pup off while you do errands!</h3>
+          <h5>$7.00</h5>
+        </div>
+      
+        <form action="/create-checkout-session" method="POST">
+          <%= render partial: 'pay/stripe/checkout_button', locals: {
+            session: @checkout_session,
+            title: "Checkout"} 
+          %>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

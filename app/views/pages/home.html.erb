@@ -24,69 +24,72 @@
             <%# </div> %>
           <%# </div>
         </form>  %>
-        
       </div>
-
     </div>      
 
+
+
     <!-- Container ('Come Play With Us' Section) -->
-    <div id="about" class="d-flex bg-grey p-3 mb-3">
-      
-          <h2>Come play with us!</h2>
-          <h4 class="text-center">Southeast Austin || Pools || Shade || School Bus || Misters || Obstacle Course || Training || Hourly Passes</h4><br>
-        
+    <div id="about" class="d-flex bg-grey justify-content-center align-items-center p-2">
+        <h4>Southeast Austin || Pools || Shade || Pick Up & Drop Off || Misters || Obstacle Course || Training || Hourly Passes</h4><br>
     </div>
   
+
+
 
     <!-- Container (Services Section) -->
     
       <!-- First 3 Services -->
-      <div id="services" class="d-lg-flex justify-content-evenly  align-items-stretch my-3"> 
+      <div id="services" class="d-lg-flex justify-content-evenly align-items-stretch my-3"> 
       <!-- Hourly -->
-        <%= link_to checkout_test_path do %>
+        <%= link_to checkout_path, class: "text-decoration-none" do %>
           <div class="card" style="width:300px">
-            <%= image_tag("Homepage/Hourly.png", class: "card-img-top", height: 200, width: 250) %>
+            <%= image_tag("Homepage/Hourly.png", class: "card-img-top") %>
             <div class="card-body">
               <div class="d-flex justify-content-between">
                 <h4 class="card-title">Hourly</h4>
                 <p class="card-text">$7</p>
               </div>
             </div>
-            <p class="card-text">Got an errand to run? Let your dog have some fun at doggie daycare</p>
+            <p class="card-text p-3">Got an errand to run? Let your dog have some fun at doggie daycare</p>
           </div>
         <% end %>
 
         <!-- Half Day -->
-        <div class="card" style="width:300px">
-          <%= image_tag("Homepage/Half_Day.png", class: "card-img-top", height: 200, width: 250) %>
-          <div class="card-body">
-            <div class="d-flex justify-content-between">
-              <h4 class="card-title">Half Day</h4>
-              <p class="card-text">$20</p>
+        <%= link_to checkout_path, class: "text-decoration-none" do %>
+          <div class="card" style="width:300px;height:100%;">
+            <%= image_tag("Homepage/Half_Day.png", class: "card-img-top") %>
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h4 class="card-title">Half Day</h4>
+                <p class="card-text">$20</p>
+              </div>
+              <p class="card-text">Let your dog enjoy a few hours while you work</p>
             </div>
-            <p class="card-text">Let your dog enjoy a few hours while you work</p>
           </div>
-        </div>
+        <% end %>
 
         <!-- Full Day -->
-        <div class="card" style="width:300px">
-          <%= image_tag("Homepage/Full_Day.png", class: "card-img-top", height: 200, width: 250) %>
-          <div class="card-body">
-            <div class="d-flex justify-content-between">
-              <h4 class="card-title">Full Day</h4>
-              <p class="card-text">$7</p>
+        <%= link_to checkout_path, class: "text-decoration-none" do %>
+          <div class="card" style="width:300px;">
+            <%= image_tag("Homepage/Full_Day.png", class: "card-img-top") %>
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h4 class="card-title">Full Day</h4>
+                <p class="card-text">$36</p>
+              </div>
+              <p class="card-text">Peace of mind your loved one is well taken care of all day <br>
+              (Not available during summer months)</p>
             </div>
-            <p class="card-text">Peace of mind your loved one is well taken care of all day <br>
-            (Not available during summer months)</p>
           </div>
-        </div>
+        <% end %>
 
       </div>
 
-      <div id="services" class="d-lg-flex justify-content-evenly">
+      <div id="services" class="d-lg-flex justify-content-evenly  align-items-stretch my-3 pb-3">
         
         <div class="card" style="width:300px">
-          <%= image_tag("Homepage/Waggin_Wagon.png", class: "card-img-top", height: 200, width: 250) %>
+          <%= image_tag("Homepage/Waggin_Wagon.png", class: "card-img-top") %>
           <div class="card-body">
             <div class="d-flex justify-content-between">
               <h4 class="card-title">Pick up/Drop Off Services</h4>
@@ -98,7 +101,7 @@
         </div>
 
         <div class="card" style="width:300px">
-          <%= image_tag("Homepage/Group_Training.png", class: "card-img-top", height: 200, width: 250) %>
+          <%= image_tag("Homepage/Group_Training.png", class: "card-img-top") %>
           <div class="card-body">
             <div class="d-flex justify-content-between">
               <h4 class="card-title">Group Training (Saturdays)</h4>
@@ -109,7 +112,7 @@
         </div>
 
         <div class="card" style="width:300px">
-          <%= image_tag("Homepage/Wash_That_Fur.png", class: "card-img-top", height: 200, width: 250) %>
+          <%= image_tag("Homepage/Wash_That_Fur.png", class: "card-img-top") %>
           <div class="card-body">
             <div class="d-flex justify-content-between">
               <h4 class="card-title">Dog Baths</h4>
