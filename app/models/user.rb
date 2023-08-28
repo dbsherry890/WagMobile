@@ -6,9 +6,7 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
 
-  include Pay::Billable
-
-  pay_customer stripe_attributes: :stripe_attributes, default_payment_processor: :stripe
+  pay_customer stripe_attributes: :stripe_attributes
   
   def stripe_attributes(pay_customer)
     {
@@ -22,10 +20,4 @@ class User < ApplicationRecord
       }
     }
   end
-
-  def pay_should_sync_customer?
-    # super will invoke Pay's default (e-mail changed)
-    super || self.saved_change_to_name?
-  end
-
 end
