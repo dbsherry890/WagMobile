@@ -21,5 +21,6 @@ module Doggies
     # config.eager_load_paths << Rails.root.join("extras")
     config.assets.paths << Rails.root.join("app/assets", 'images')
     config.assets.paths << Rails.root.join("app/assets", 'videos')
+    config.active_job.queue_adapter = :sidekiq
   end
 end
