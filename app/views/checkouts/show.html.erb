@@ -1,27 +1,45 @@
-<h1>Checkout!</h1>
-
-
-
+<<<<<<< HEAD
 <html>
   <head>
     <title>By the Hour</title>
   </head>
   <body>
+    
     <section>
-      <div class="product container m-4" style="width:300px">
+      <div class="product container m-3" style="width:20%; height: auto;">
+        <h1>Hourly</h1>
         <%= image_tag("Homepage/Hourly.png", class: "card-img-top", height: 200) %>
         <div class="description">
           <h3>Drop your pup off while you do errands!</h3>
-          <h5>$7.00</h5>
+          <div class="d-flex justify-content-between">
+            <h5>$7.00</h5>
+            <div class="def-number-input number-input">
+              <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                class="minus"></button>
+              <input class="quantity fw-bold text-black" min="0" name="quantity" value="1"
+                type="number">
+              <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                class="plus"></button>
+            </div>
+          </div>
+          
         </div>
       
         <form action="/create-checkout-session" method="POST">
           <%= render partial: 'pay/stripe/checkout_button', locals: {
             session: @checkout_session,
-            title: "Checkout"} 
+            title: "Buy Now"} 
           %>
         </form>
       </div>
     </section>
   </body>
 </html>
+=======
+<h1>Checkout!</h1>
+
+<%= render partial: 'pay/stripe/checkout_button', locals: {
+    session: @checkout_session,
+    title: "Checkout"
+} %>
+>>>>>>> parent of 0a2b743 (made cards links)

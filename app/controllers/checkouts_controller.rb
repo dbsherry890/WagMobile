@@ -10,7 +10,7 @@ class CheckoutsController < ApplicationController
             .checkout(
                 mode: 'payment', 
                 line_items: 'price_1NemgGGkuEbvqO9Dq89tzp4E',
-                # success_url:  checkout_session_url,
+                success_url: checkout_success_url
             )
     end
 
