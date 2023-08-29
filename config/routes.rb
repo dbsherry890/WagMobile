@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
-  get '/u/:id', to: 'users#profile', as: 'user'
+  get '/u/:id', to: 'users#profile'
 
   # /posts/1/comments/4
   resources :posts do 
@@ -22,4 +22,5 @@ Rails.application.routes.draw do
   get 'checkout', to: 'checkouts#show'
   get 'checkout/success', to: 'checkouts#success'
   get 'billing', to: 'billing#show'
+  get 'profile/:id', to: 'users#profile'
 end

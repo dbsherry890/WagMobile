@@ -18,12 +18,16 @@
       <li class="nav-item active">
         <%= link_to "About", about_path, class:'nav-link active' %> 
       </li>
+      <li class="nav-item active">
+        <%= link_to "FAQ", '#', class:'nav-link active' %> 
+      </li>
       <%# <li class="nav-item">
         <%= link_to "Posts", posts_path, class:'nav-link active' %> 
       <%# </li>  %>
+<%#       
       <li class="nav-item">
         <%= link_to "Checkout", checkout_path, class:'nav-link active' %> 
-      </li>
+      <%# </li> %>
     </ul>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
       <%= render 'user/session_manager' %>

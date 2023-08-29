@@ -7,4 +7,7 @@ class PagesController < ApplicationController
     # @portal_session = current_user.payment_processor.billing_portal
   end
 
+  def faq
+  end
+
 end

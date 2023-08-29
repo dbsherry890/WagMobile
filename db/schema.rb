@@ -53,8 +53,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_14_003307) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.bigint "post_id", null: false
-    t.bigint "user_id", null: false
+    t.integer "post_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
@@ -62,15 +62,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_14_003307) do
   end
 
   create_table "pay_charges", force: :cascade do |t|
-    t.bigint "customer_id", null: false
-    t.bigint "subscription_id"
+    t.integer "customer_id", null: false
+    t.integer "subscription_id"
     t.string "processor_id", null: false
     t.integer "amount", null: false
     t.string "currency"
     t.integer "application_fee_amount"
     t.integer "amount_refunded"
-    t.jsonb "metadata"
-    t.jsonb "data"
+    t.json "metadata"
+    t.json "data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id", "processor_id"], name: "index_pay_charges_on_customer_id_and_processor_id", unique: true
@@ -79,11 +79,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_14_003307) do
 
   create_table "pay_customers", force: :cascade do |t|
     t.string "owner_type"
-    t.bigint "owner_id"
+    t.integer "owner_id"
     t.string "processor", null: false
     t.string "processor_id"
     t.boolean "default"
-    t.jsonb "data"
+    t.json "data"
     t.datetime "deleted_at", precision: nil
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -93,29 +93,29 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_14_003307) do
 
   create_table "pay_merchants", force: :cascade do |t|
     t.string "owner_type"
-    t.bigint "owner_id"
+    t.integer "owner_id"
     t.string "processor", null: false
     t.string "processor_id"
     t.boolean "default"
-    t.jsonb "data"
+    t.json "data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["owner_type", "owner_id", "processor"], name: "index_pay_merchants_on_owner_type_and_owner_id_and_processor"
   end
 
   create_table "pay_payment_methods", force: :cascade do |t|
-    t.bigint "customer_id", null: false
+    t.integer "customer_id", null: false
     t.string "processor_id", null: false
     t.boolean "default"
     t.string "type"
-    t.jsonb "data"
+    t.json "data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id", "processor_id"], name: "index_pay_payment_methods_on_customer_id_and_processor_id", unique: true
   end
 
   create_table "pay_subscriptions", force: :cascade do |t|
-    t.bigint "customer_id", null: false
+    t.integer "customer_id", null: false
     t.string "name", null: false
     t.string "processor_id", null: false
     t.string "processor_plan", null: false
@@ -130,8 +130,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_14_003307) do
     t.datetime "pause_starts_at", precision: nil
     t.datetime "pause_resumes_at", precision: nil
     t.decimal "application_fee_percent", precision: 8, scale: 2
-    t.jsonb "metadata"
-    t.jsonb "data"
+    t.json "metadata"
+    t.json "data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id", "processor_id"], name: "index_pay_subscriptions_on_customer_id_and_processor_id", unique: true
@@ -142,7 +142,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_14_003307) do
   create_table "pay_webhooks", force: :cascade do |t|
     t.string "processor"
     t.string "event_type"
-    t.jsonb "event"
+    t.json "event"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -153,7 +153,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_14_003307) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "views", default: 0
-    t.bigint "user_id", null: false
+    t.integer "user_id", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
