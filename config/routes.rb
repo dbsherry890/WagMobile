@@ -22,9 +22,4 @@ Rails.application.routes.draw do
   get 'checkout', to: 'checkouts#show'
   get 'checkout/success', to: 'checkouts#success'
   get 'billing', to: 'billing#show'
-<<<<<<< HEAD
-  get 'profile/:id', to: 'users#profile'
-=======
-  get 'checkout/test', to: 'checkouts#checkout'
->>>>>>> parent of 0a2b743 (made cards links)
 end
