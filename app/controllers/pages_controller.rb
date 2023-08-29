@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   end
 
   def about
-    @portal_session = current_user.payment_processor.billing_portal
+    #@portal_session = current_user.payment_processor.billing_portal
   end
 
   def faq
