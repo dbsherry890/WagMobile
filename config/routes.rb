@@ -22,4 +22,5 @@ Rails.application.routes.draw do
   get 'checkout', to: 'checkouts#show'
   get 'checkout/success', to: 'checkouts#success'
   get 'billing', to: 'billing#show'
+  get 'profile/:id', to: 'users#profile'
 end
