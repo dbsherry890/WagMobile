@@ -1,9 +1,10 @@
-<div class="container m-5 p-2 border w-25">
+<link rel="stylesheet" href="devise.scss">
+<div id="SignIn" class="container m-5 p-2 border w-25">
   <header>
     <h2>Log in</h2>
   </header>
 
-  <div class="">
+  <div>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-floating mb-3">
         
