@@ -6,12 +6,9 @@
 
   <div>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form-floating mb-3">
-        
+      <div class="field form-floating mb-3">
         <%= f.email_field :email, id: "floatingInput", autocomplete: "email", class: "form-control", placeholder: "Email" %>
-        <label for="floatingInput">Email address</label>
-        <!-- <p><%= f.label :email, class: "form-control" %></p> -->
-      
+        <label for="floatingInput">Email address</label>      
       </div>
 
 
