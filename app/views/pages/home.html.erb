@@ -28,13 +28,61 @@
     </div>      
 
     <!-- Container ('Come Play With Us' Section) -->
-    <div id="about" class="d-flex bg-grey justify-content-center align-items-center pt-2 m-auto">
-      <h4>Southeast Austin &#8226 Pools &#8226 Shade &#8226 Pick Up & Drop Off &#8226 Misters &#8226 Obstacle Course &#8226 Training &#8226 Hourly Passes</h4><br>
+    <div id="about" class="bg-grey p-2 m-auto redborder text-center">
+      <h4 class="redborder">Southeast Austin &#8226 Pools &#8226 Shade &#8226 Pick Up & Drop Off &#8226 Misters &#8226 Obstacle Course &#8226 Training &#8226 Hourly Passes</h4><br>
     </div>
 
     <!-- Container (Services Section) -->
     
-      <!-- First 3 Services -->
+    <!-- Tester 3 Services -->
+    <div id="services" class="d-flex align-items-start flex-wrap justify-content-evenly p-3"> 
+      <%= link_to checkout_path, class: "text-decoration-none" do %>
+      <div class="card">
+        <%= image_tag("Homepage/Hourly.png", class: "card-img-top") %>
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <h4 class="card-title">Hourly</h4>
+            <p class="card-text">$7</p>
+          </div>
+          <p class="card-text">Got an errand to run? Let your dog have some fun at doggie daycare</p>
+        </div>
+      </div>
+      <% end %> 
+
+      <!-- Half Day -->
+      <%= link_to checkout_path, class: "text-decoration-none" do %>
+      <div class="card mx-auto">
+        <%= image_tag("Homepage/Half_Day.png", class: "card-img-top") %>
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <h4 class="card-title">Half Day</h4>
+            <p class="card-text">$20</p>
+          </div>
+          <p class="card-text">Let your dog enjoy a few hours while you work</p>
+        </div>
+      </div>
+      <% end %>
+
+      <!-- Full Day -->
+      <%= link_to checkout_path, class: "text-decoration-none" do %>
+      <div class="card mx-auto">
+        <%= image_tag("Homepage/Full_Day.png", class: "card-img-top") %>
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <h4 class="card-title">Full Day</h4>
+            <p class="card-text">$36</p>
+          </div>
+          <p class="card-text">Peace of mind your loved one is well taken care of all day <br>
+          (Not available during summer months)</p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+
+
+
+
     <div id="services" class="p-3"> 
       <div class="row w-100 g-3">
         <%= link_to checkout_path, class: "text-decoration-none col-lg-4 col-md-6 col-sm-12" do %>
@@ -49,22 +97,6 @@
           </div>
         </div>
         <% end %> 
-    
-    
-      <!-- Hourly 
-        <%= link_to checkout_path, class: "text-decoration-none" do %>
-        <div class="card">
-          <%= image_tag("Homepage/Hourly.png", class: "card-img-top") %>
-          <div class="card-body">
-            <div class="d-flex justify-content-between">
-              <h4 class="card-title">Hourly</h4>
-              <p class="card-text">$7</p>
-            </div>
-            <p class="card-text">Got an errand to run? Let your dog have some fun at doggie daycare</p>
-          </div>
-        </div>
-        <% end %> 
-        -->
 
         <!-- Half Day -->
         <%= link_to checkout_path, class: "text-decoration-none col-lg-4 col-md-6 col-sm-12" do %>
@@ -81,7 +113,6 @@
         <% end %>
 
         <!-- Full Day -->
-        
         <%= link_to checkout_path, class: "text-decoration-none col-lg-4 col-md-6 col-sm-12" do %>
         <div class="card mx-auto">
           <%= image_tag("Homepage/Full_Day.png", class: "card-img-top") %>
@@ -97,53 +128,53 @@
         <% end %>
       </div>
 
-    </div>
+    
 
-      <div id="services" class="d-lg-flex justify-content-evenly align-items-stretch p-3 "> 
+      <!-- Second 3 services -->
       <!-- Pick Up/Drop Off -->
-        <%= link_to checkout_path, class: "text-decoration-none" do %>
-          <div class="card">
-            <%= image_tag("Homepage/Waggin_Wagon.png", class: "card-img-top") %>
-            <div class="card-body">
-              <div class="d-flex justify-content-between ">
-                <h4 class="card-title">Pick up/Drop Off Services</h4>
-                <p class="card-text">$7</p>
-              </div>
-              <p class="card-text ">Free Service Available for Full Day Campers <br>
-              (*Summer Campers Welcome Too)</p>
+      <%= link_to checkout_path, class: "text-decoration-none col-lg-4 col-md-6 col-sm-12" do %>
+        <div class="card mx-auto">
+          <%= image_tag("Homepage/Waggin_Wagon.png", class: "card-img-top") %>
+          <div class="card-body">
+            <div class="d-flex justify-content-between ">
+              <h4 class="card-title">Pick up/Drop Off Services</h4>
+              <p class="card-text">$7</p>
             </div>
+            <p class="card-text ">Free Service Available for Full Day Campers <br>
+            (*Summer Campers Welcome Too)</p>
           </div>
-        <% end %>
+        </div>
+      <% end %>
 
-        <!-- Half Day -->
-        <%= link_to checkout_path, class: "text-decoration-none" do %>
-          <div class="card">
-            <%= image_tag("Homepage/Group_Training.png", class: "card-img-top") %>
-            <div class="card-body">
-              <div class="d-flex justify-content-between">
-                <h4 class="card-title">Group Training (Saturdays)</h4>
-                <p class="card-text">N/A</p>
-              </div>
-              <p class="card-text">Classes coming July 22nd. Inquire for more details</p>
+      <!-- Half Day -->
+      <%= link_to checkout_path, class: "text-decoration-none col-lg-4 col-md-6 col-sm-12" do %>
+        <div class="card mx-auto">
+          <%= image_tag("Homepage/Group_Training.png", class: "card-img-top") %>
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h4 class="card-title">Group Training (Saturdays)</h4>
+              <p class="card-text">N/A</p>
             </div>
+            <p class="card-text">Classes coming July 22nd. Inquire for more details</p>
           </div>
-        <% end %>
+        </div>
+      <% end %>
 
-        <!-- Full Day -->
-        <%= link_to "https://www.washthatfur.com", class: "text-decoration-none" do %>
-          <div class="card">
-            <%= image_tag("Homepage/Wash_That_Fur.png", class: "card-img-top") %>
-            <div class="card-body ">
-              <div class="d-flex justify-content-between">
-                <h4 class="card-title">Dog Baths</h4>
-                <p class="card-text">N/A</p>
-              </div>
-              <p class="card-text">Drop off your dog for daycare & bath or request a home visit. Reservations required.<br></p>
+      <!-- Full Day -->
+      <%= link_to "https://www.washthatfur.com", class: "text-decoration-none col-lg-4 col-md-6 col-sm-12" do %>
+        <div class="card mx-auto">
+          <%= image_tag("Homepage/Wash_That_Fur.png", class: "card-img-top") %>
+          <div class="card-body ">
+            <div class="d-flex justify-content-between">
+              <h4 class="card-title">Dog Baths</h4>
+              <p class="card-text">N/A</p>
             </div>
+            <p class="card-text">Drop off your dog for daycare & bath or request a home visit. Reservations required.<br></p>
           </div>
-        <% end %>
+        </div>
+      <% end %>
 
-      </div>
+    </div>
      
       <!--
       <br><br>
