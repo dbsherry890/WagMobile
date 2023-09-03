@@ -1,4 +1,13 @@
-<% if notice || alert %>   
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-<% end %>
+<script type="text/javascript">
+  setTimeout(() => {
+  let get = document.getElementById('NoticeAlert');
+  // let get = document.querySelector("div");
+  get.remove();
+  }, 8500);
+</script>
+<div id="NoticeAlert" class="p-0 m-0">
+  <% if notice || alert %>   
+    <h3 class="notice"><%= notice %></h3>
+    <h3 class="alert p-0 m-0"><%= alert %></h3>
+  <% end %>
+</div>
