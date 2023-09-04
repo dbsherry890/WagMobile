@@ -10,8 +10,7 @@ gem "rails", "~> 7.0.6"
 gem "sprockets-rails"
 
 # Use pg as the database for Active Record
-#gem "pg", "~> 1.4"
-#gem "pg", "~> 1.1"
+gem "pg", "~> 1.5"
 gem "sqlite3"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -85,3 +84,12 @@ gem 'jquery-rails'
 gem "stripe", "~> 8.7"
 gem "pay", "~> 6.7"
 gem "receipts", "~> 2.0" 
+gem "dockerfile-rails", ">= 1.5", :group => :development
+
+gem "redis", "~> 5.0"
+
+gem "sentry-ruby", "~> 5.10"
+
+gem "sentry-rails", "~> 5.10"
+
+gem "matrix", "~> 0.4.2"

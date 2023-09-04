@@ -81,7 +81,8 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  database: doggies_production
-  username: doggies
+  #<<: *default
+  database: wagmobiles-db
+  username: postgres
   password: <%= ENV["WAG_DATABASE_PASSWORD"] %>
+  encoding: unicode
