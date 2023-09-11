@@ -81,8 +81,9 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  #<<: *default
-  database: wagmobiles-db
-  username: postgres
-  password: <%= ENV["WAG_DATABASE_PASSWORD"] %>
-  encoding: unicode
+  <<: *default
+  database: db/development.sqlite3
+  #database: wagmobiles-db
+  # username: postgres
+  # password: <%= ENV["WAG_DATABASE_PASSWORD"] %>
+  #encoding: unicode

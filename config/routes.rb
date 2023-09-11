@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "pages#home"
   get 'checkout', to: 'checkouts#show'
+  get 'checkout/index', to: 'checkouts#index'
   get 'checkout/success', to: 'checkouts#success'
   get 'billing', to: 'billing#show'
   get 'profile/:id', to: 'users#profile'

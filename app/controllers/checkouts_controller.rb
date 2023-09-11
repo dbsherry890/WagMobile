@@ -2,6 +2,7 @@ class CheckoutsController < ApplicationController
     before_action :authenticate_user!
 
     def show
+        #format.turbo_stream { render :show}
         current_user.set_payment_processor :stripe
         current_user.payment_processor.customer
 
@@ -22,6 +23,9 @@ class CheckoutsController < ApplicationController
 
     def checkout
         
+    end
+
+    def index
     end
 
 end

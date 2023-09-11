@@ -35,19 +35,18 @@
     <!-- Container (Services Section) -->
     
     <!-- First 3 Services -->
-    <div id="services" class="d-flex align-items-start flex-wrap justify-content-evenly p-3"> 
-      <%= link_to checkout_path, class: "text-decoration-none" do %>
-      <div class="card
-      ">
-        <%= image_tag("Homepage/Hourly.png", class: "card-img-top") %>
-        <div class="card-body">
-          <div class="d-flex justify-content-between">
-            <h4 class="card-title">Hourly</h4>
-            <p class="card-text">$7</p>
+    <div id="services" class="text-decoration-none d-flex align-items-start flex-wrap justify-content-evenly p-3"> 
+      <%= link_to checkout_path, data: { turbo_frame: "modal" }, class: "text-decoration-none" do %>
+        <div class="card">
+          <%= image_tag("Homepage/Hourly.png", class: "card-img-top") %>
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h4 class="card-title">Hourly</h4>
+              <p class="card-text">$7</p>
+            </div>
+            <p class="card-text">Got an errand to run? Let your dog have some fun at doggie daycare</p>
           </div>
-          <p class="card-text">Got an errand to run? Let your dog have some fun at doggie daycare</p>
         </div>
-      </div>
       <% end %> 
 
       <!-- Half Day -->
