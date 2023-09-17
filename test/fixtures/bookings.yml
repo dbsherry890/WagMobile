@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: 1
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  start_at: 2023-09-17 16:29:58
+  end_at: 2023-09-17 16:29:58
+  dog_name: MyString
+  dog_description: MyText
+
+two:
+  status: 1
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  start_at: 2023-09-17 16:29:58
+  end_at: 2023-09-17 16:29:58
+  dog_name: MyString
+  dog_description: MyText

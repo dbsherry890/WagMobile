@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :booking_types
+
+  
+  resources :bookings, except: [:index, :new]
+  
   get 'users/profile'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
@@ -10,7 +15,10 @@ Rails.application.routes.draw do
   resources :posts do 
     resources :comments
   end
-
+  get ":booking_link", to: "users#show", as: :user
+  scope '/:booking_link', as: :user do
+    resources :bookings, only: [:index, :new]
+  end
 
   #get 'pages/home'
   #get 'home', to: 'pages#home'
@@ -25,4 +33,5 @@ Rails.application.routes.draw do
   get 'billing', to: 'billing#show'
   get 'profile/:id', to: 'users#profile'
   get 'post/:id', to: 'posts#profile'
+  get 'dashboard', to: 'pages#dashboard'
 end

@@ -1,12 +1,14 @@
 <%= turbo_frame_tag "modal" do %>
-  <div class="showmodal">
+  <div class="showmodal text-dark">
     
-    <h1 class="text-dark">Hourly </h1>
+    <h1>Hourly </h1>
       <%= image_tag("Homepage/Hourly.png", class: "card-img-top", style: "height: auto; max-width: 75%;") %>
-      <div class="description">
+      <div class="description mt-3">
         <h3>Drop your pup off while you do errands!</h3>
         <div class="d-flex justify-content-between">
-          <h5>$7.00</h5>
+          <h3>$7.00</h3>
+          
+          <!-- 
           <div class="def-number-input number-input">
             <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
               class="minus"></button>
@@ -15,20 +17,21 @@
             <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
               class="plus"></button>
           </div>
+          -->
           
         </div>
         
         <form action="/create-checkout-session" method="POST">
           <%= render partial: 'pay/stripe/checkout_button', locals: {
             session: @checkout_session,
-            title: "Buy Now"} 
-          %>
+            title: "Buy Now"} %>
         </form>
         <%= link_to "Cancel", "#", data: {
           controller: "modals",
           action: "modals#close"
         }, class: "cancel-button" %>
       </div>
+      
       
   </div>
 <% end %>

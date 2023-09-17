@@ -8,6 +8,12 @@
       <%= f.label :email %><br/>
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
+
+    <div class="field form-floating mb-2">
+      <%= f.text_field :booking_link, id: "floatingInput", autocomplete: "email", class: "form-control", placeholder: "Email" %>
+      <label for="floatingInput">Booking Link</label> 
+    </div>
+
     <br>
     <div class="field">
       <%= f.label :name %><br />
