@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
   resources :booking_types
-
-  
   resources :bookings, except: [:index, :new]
+  post "payment-intent", to: "bookings#intent"
+
+  get ":booking_link", to: "users#show", as: :user
+
+  scope '/:booking_link', as: :user do
+    resources :bookings, only: [:index, :new]
+  end
   
   get 'users/profile'
   devise_for :users, controllers: {
@@ -15,11 +20,7 @@ Rails.application.routes.draw do
   resources :posts do 
     resources :comments
   end
-  get ":booking_link", to: "users#show", as: :user
-  scope '/:booking_link', as: :user do
-    resources :bookings, only: [:index, :new]
-  end
-
+  
   #get 'pages/home'
   #get 'home', to: 'pages#home'
   get 'about', to: 'pages#about'
