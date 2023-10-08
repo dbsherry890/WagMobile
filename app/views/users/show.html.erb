@@ -1,14 +1,41 @@
 <div class="mx-auto pb-6 border">
   <div class="px-5 py-6">
-    <h1 class="text-center"><%= current_user.name %>'s Booking Page</h1>
+    <h1 class="text-center"><%= current_user["name"] %>'s Booking Page</h1>
     <p class="text-center mt-2">Book your prefered time slot using the booking options below.</p>
   </div>
 </div>
+<!--
+<div id="booking_types" class="text-decoration-none d-flex align-items-start flex-wrap justify-content-evenly p-3">
+  <div class="card d-flex">
+    <div class="card-body">
+      <% @user.booking_types.each do |booking_type| %>
+        <%= image_tag("Homepage/Hourly.png", class: "card-img-top") %>
+          <%= render "users/booking_type", booking_type: booking_type %>
+      <% end %>
+    </div> 
+  </div>
+</div>
+-->
 
+<% @user.booking_types.each do |booking_type| %>
+  <div class="card d-flex">
+    <%# <%= image_tag("Homepage/Half_Day.png", class: "card-img-top") %> 
+    <div class="card-body">
+      <div class="d-flex justify-content-between">
+        <h4 class="card-title"><%= booking_type.name.capitalize %></h4>
+        <p class="card-text"><%= booking_type.price %></p>
+      </div>
+      <p class="card-text">Let your dog enjoy a few hours while you work</p>
+    </div>
+  </div>
+<% end %>
+
+<!--
 <div class="text-decoration-none d-flex align-items-start flex-wrap justify-content-evenly p-3 redborder">
   <% @user.booking_types.each do |booking_type| %>
   <div class="w-25 redborder">
-    <%= render "users/booking_type", booking_type: booking_type %>
+    <%= render "users/booking_type", booking_type: booking_type, class: "card" %>
   </div> 
   <% end %>
 </div>
+-->

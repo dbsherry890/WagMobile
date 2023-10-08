@@ -60,6 +60,7 @@ class BookingTypesController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through.
+    # These have been whitelisted as "safe" to pass into our database. 
     def booking_type_params
       params.require(:booking_type).permit(:name, :location, :color, :duration, :payment_required, :price)
     end

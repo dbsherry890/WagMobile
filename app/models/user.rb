@@ -1,11 +1,15 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  has_person_name
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  has_many :booking_types
+  validates :booking_link, presence: true
+
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :booking_types
+  
 
   include Pay::Billable
 
@@ -28,7 +32,5 @@ class User < ApplicationRecord
     # super will invoke Pay's default (e-mail changed)
     super || self.saved_change_to_name?
   end
-
-  validates :booking_link, presence: true
 
 end
