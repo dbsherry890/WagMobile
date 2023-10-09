@@ -37,7 +37,7 @@
     <!-- First 3 Services -->
     <div id="services" class="text-decoration-none d-flex align-items-start flex-wrap justify-content-evenly p-3"> 
       <%= link_to checkout_path, data: { turbo_frame: "modal" }, class: "text-decoration-none" do %>
-        <div class="card d-flex">
+        <div id="homecards" class="card d-flex">
           <%= image_tag("Homepage/Hourly.png", class: "card-img-top") %>
           <div class="card-body">
             <div class="d-flex justify-content-between">
@@ -51,7 +51,7 @@
 
       <!-- Half Day -->
       <%= link_to checkout_path, class: "text-decoration-none" do %>
-      <div class="card">
+      <div id="homecards" class="card">
         <%= image_tag("Homepage/Half_Day.png", class: "card-img-top") %>
         <div class="card-body">
           <div class="d-flex justify-content-between">
@@ -65,7 +65,7 @@
 
       <!-- Full Day -->
       <%= link_to checkout_path, class: "text-decoration-none" do %>
-      <div class="card ">
+      <div id="homecards" class="card ">
         <%= image_tag("Homepage/Full_Day.png", class: "card-img-top") %>
         <div class="card-body">
           <div class="d-flex justify-content-between">
@@ -82,7 +82,7 @@
       <!-- Second 3 services -->
       <!-- Pick Up/Drop Off -->
       <%= link_to checkout_path, class: "text-decoration-none" do %>
-        <div class="card ">
+        <div id="homecards" class="card ">
           <%= image_tag("Homepage/Waggin_Wagon.png", class: "card-img-top") %>
           <div class="card-body">
             <div class="d-flex justify-content-between ">
@@ -97,7 +97,7 @@
 
       <!-- Half Day -->
       <%= link_to checkout_path, class: "text-decoration-none" do %>
-        <div class="card">
+        <div id="homecards" class="card">
           <%= image_tag("Homepage/Group_Training.png", class: "card-img-top") %>
           <div class="card-body">
             <div class="d-flex justify-content-between">
@@ -111,7 +111,7 @@
 
       <!-- Full Day -->
       <%= link_to "https://www.washthatfur.com", class: "text-decoration-none" do %>
-        <div class="card">
+        <div id="homecards" class="card">
           <%= image_tag("Homepage/Wash_That_Fur.png", class: "card-img-top") %>
           <div class="card-body ">
             <div class="d-flex justify-content-between">

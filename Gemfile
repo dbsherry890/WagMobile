@@ -93,5 +93,3 @@ gem "sentry-ruby", "~> 5.10"
 gem "sentry-rails", "~> 5.10"
 
 gem "matrix", "~> 0.4.2"
-
-gem "name_of_person"

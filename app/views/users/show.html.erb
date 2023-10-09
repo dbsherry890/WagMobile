@@ -1,6 +1,6 @@
-<div class="mx-auto pb-6 border">
+<div class="mx-auto p-6 border">
   <div class="px-5 py-6">
-    <h1 class="text-center"><%= current_user["name"] %>'s Booking Page</h1>
+    <h1 class="pt-3 text-center text-dark"><%= current_user["name"] %>'s Booking Page (users/show)</h1>
     <p class="text-center mt-2">Book your prefered time slot using the booking options below.</p>
   </div>
 </div>
@@ -16,19 +16,26 @@
   </div>
 </div>
 -->
-
-<% @user.booking_types.each do |booking_type| %>
-  <div class="card d-flex">
-    <%# <%= image_tag("Homepage/Half_Day.png", class: "card-img-top") %> 
-    <div class="card-body">
-      <div class="d-flex justify-content-between">
-        <h4 class="card-title"><%= booking_type.name.capitalize %></h4>
-        <p class="card-text"><%= booking_type.price %></p>
+<div class="d-lg-flex">
+  <% @user.booking_types.each do |booking_type| %>
+    <div class="card">
+      <% if booking_type.name == "hourly" %>
+        <%= image_tag("Homepage/Hourly.png", class: "card-img-top") %> 
+      <% elsif  booking_type.name == "halfday" %>
+        <%= image_tag("Homepage/Half_Day.png", class: "card-img-top") %> 
+      <% else %>
+        <%= image_tag("Homepage/Full_Day.png", class: "card-img-top") %>
+      <% end %>
+      <div class="card-body">
+        <div class="d-flex justify-content-between">
+          <h4 class="card-title"><%= booking_type.name.capitalize %></h4>
+          <p class="card-text"><%= booking_type.price %></p>
+        </div>
+        <p class="card-text">Let your dog enjoy a few hours while you work</p>
       </div>
-      <p class="card-text">Let your dog enjoy a few hours while you work</p>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
 
 <!--
 <div class="text-decoration-none d-flex align-items-start flex-wrap justify-content-evenly p-3 redborder">

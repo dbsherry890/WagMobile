@@ -1,64 +1,67 @@
-<%= form_with(model: booking, data: { turbo: false, action: "submit->payment#purchase", payment_target: "form"}) do |form| %>
-  <% if booking.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 p-6 rounded text-red-800">
-      <h2 class="text-lg font-semibold mb-3"><%= pluralize(booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+<div class= "text-center">
+  <%= form_with(model: booking, data: { turbo: false, action: "submit->payment#purchase", payment_target: "form"}) do |form| %>
+    <% if booking.errors.any? %>
+      <div id="error_explanation" class="bg-red-50 p-6 rounded text-red-800">
+        <h2 class="text-lg font-semibold mb-3"><%= pluralize(booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
 
-      <ul class="list-disc leading-relaxed">
-        <% booking.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+        <ul class="list-disc leading-relaxed">
+          <% booking.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-  <h3 class="font-bold text-lg mb-3 mt-6">Personal details</h3>
+    <div class="w-25 border card p-3">
+      <h3 class="font-bold text-lg mb-2">Human Information</h3>
+      <div class="field form-floating mb-3">
+        <%= form.text_field :name, data: { payment_target: "name" }, id: "floatingInput", autocomplete: "name", class: "form-control", placeholder: "Name" %>
+        <%= form.label :name %>
+      </div>
 
-  <div class="grid grid-col-1 lg:grid-cols-2 gap-6 mb-10">
-    <div>
-      <%= form.label :name %>
-      <%= form.text_field :name, data: { payment_target: "name" } %>
-    </div>
+      <div class="field form-floating mb-3">
+        <%= form.text_field :email, data: { payment_target: "email" }, id: "floatingInput", autocomplete: "email", class: "form-control", placeholder: "Email" %>
+        <%= form.label :email %>
+      </div>
+    
 
-    <div>
-      <%= form.label :email %>
-      <%= form.text_field :email, data: { payment_target: "email" } %>
-    </div>
-  </div>
+      <div class="field form-floating mb-3">
+        <%= form.text_area :notes, id: "floatingInput", autocomplete: "notes", class: "form-control", placeholder: "Notes" %>
+        <%= form.label :notes %>
+      </div>
+    
 
-  <div class="mb-6">
-    <%= form.label :notes %>
-    <%= form.rich_text_area :notes %>
-  </div>
+      <h3 class="font-bold text-lg mb-3">Booking details</h3>
 
-  <h3 class="font-bold text-lg mb-3">Booking details</h3>
-
-  <% if @booking.new_record? %>
-    <div class="mb-6">
-      <div class="rounded border-slate-300 border shadow-sm bg-white py-6 px-10 inline-block relative">
-        <%= form.label :booking_type_id, "Booking type" %>
-        <input type="hidden" name="booking[booking_type_id]" value="<%= @booking_type.id %>">
-        <div class="flex items-start">
-          <div class="text-3xl font-bold mr-3"><%= params[:booking_type] %>
-            <div class="absolute top-3 right-3 w-3 h-3 rounded-full" style="background-color: <%= @booking_type.color %>;"></div>
+      <% if @booking.new_record? %>
+        <div class="mb-6">
+          <div class="rounded border-slate-300 border shadow-sm bg-white py-6 px-10 inline-block relative">
+            <%= form.label :booking_type_id, "Booking type" %>
+            <input type="hidden" name="booking[booking_type_id]" value="<%= @booking_type.id %>">
+            <div class="flex items-start">
+              <div class="text-3xl font-bold mr-3"><%= params[:booking_type] %>
+                <div class="absolute top-3 right-3 w-3 h-3 rounded-full" style="background-color: <%= @booking_type.color %>;"></div>
+              </div>
+            </div>
           </div>
         </div>
+      <% else %>
+        <%= @booking.booking_type.name %>
+      <% end %>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
+        <div>
+          <%= form.label :start_at %>
+          <%= form.datetime_field :start_at, min: Date.today %>
+        </div>
+
+        <div>
+          <%= form.label :end_at %>
+          <%= form.datetime_field :end_at, min: Date.today %>
+        </div>
       </div>
+
+      <%= form.submit @booking_type.payment_required? ? "Schedule booking for #{number_to_currency(@booking_type.price)}" : "Schedule booking", class: "btn btn-primary", data: { payment_target: "submit" } %>
     </div>
-  <% else %>
-    <%= @booking.booking_type.name %>
   <% end %>
-
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
-    <div>
-      <%= form.label :start_at %>
-      <%= form.datetime_field :start_at, min: Date.today %>
-    </div>
-
-    <div>
-      <%= form.label :end_at %>
-      <%= form.datetime_field :end_at, min: Date.today %>
-    </div>
-  </div>
-
-  <%= form.submit @booking_type.payment_required? ? "Schedule booking for #{number_to_currency(@booking_type.price)}" : "Schedule booking", class: "btn btn-primary", data: { payment_target: "submit" } %>
-<% end %>
+</div>  
